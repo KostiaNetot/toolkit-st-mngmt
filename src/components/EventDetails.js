@@ -1,18 +1,17 @@
-
-
+import { Card } from 'semantic-ui-react';
 
 export const EventDetails = ({ event }) => {
 
   return (
-    <div>
-      <h3>Event ID: {event.title}</h3>
-      <h4>Event ID: {event.id}</h4>
-      <ul>
-        <li>Date: {event.datetime_local}</li> {/* TODO: date format */}
-        <li>Type: {event.type}</li>
-        <li>Venue: {event.venue.name}</li>
-      </ul>
-    </div>
+    <Card>
+      <Card.Content>
+        <Card.Header>{event.title}</Card.Header>
+        <Card.Meta>Date: {event.datetime_local}</Card.Meta>
+        <Card.Meta>Event ID: {event.id}</Card.Meta>
+        <Card.Description>Type: {event.type}</Card.Description>
+        <Card.Description>Venue: {event.venue.name}</Card.Description>
+      </Card.Content>
+    </Card>
   );
 }
 

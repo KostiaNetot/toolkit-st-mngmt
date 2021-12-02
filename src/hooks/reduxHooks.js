@@ -8,10 +8,8 @@ export const useGetEvents = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (events.events.length <= 1) {
       dispatch(setFetchingEvents());
       fetchEvents().then(({ data }) => dispatch(setEvents(data)));
-    }
   }, []);
 
   return events;

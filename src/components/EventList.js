@@ -1,18 +1,13 @@
 import { EventListItem } from '../components/EventListItem';
+import { Header, List } from 'semantic-ui-react';
 
 export const EventList = ({ eventsData }) => {
   const { events } = eventsData;
 
   return (
-    <div>
-      <h2>Events: </h2>
-      <ul>
-        {events.map(event => (
-          <li key={event.id}>
-            <EventListItem event={event} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <List divided relaxed>
+       <Header as='h2'>Events: </Header>
+      {events.map(event => <EventListItem key={event.id} event={event} />)}
+      </List>
   );
 }
