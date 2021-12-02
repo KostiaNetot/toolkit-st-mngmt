@@ -26,10 +26,8 @@ export const useGetEvent = (id) => {
   });
 
   useEffect(() => {
-    if (!event) {
       dispatch(setFetchingEvents());
-      fetchEvent(id).then(({ data }) => dispatch(setEvent(data)));    
-    }
+      fetchEvent(id).then(({ data }) => dispatch(setEvent(data)));  
   }, []);
 
   return { event, loading };
